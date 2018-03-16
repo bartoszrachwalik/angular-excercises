@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
+  // selectors as element, attribute or class
+  // selector: 'app-servers',
+  // selector: '[app-servers]',
+  // selector: '.app-servers',
   selector: 'app-servers',
   template: `
     <app-server></app-server>
