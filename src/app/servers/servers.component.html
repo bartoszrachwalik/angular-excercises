@@ -1,14 +1,14 @@
 <!--Property and event binding -->
 <label>Server Name</label>
-<input
-  type="text"
-  class="form-control"
-  (input)="onUpdateServername($event)">
+<!--<input-->
+<!--type="text"-->
+<!--class="form-control"-->
+<!--(input)="onUpdateServername($event)">-->
 <input
   type="text"
   class="form-control"
   [(ngModel)]="serverName">
-<p>{{serverName}}</p>
+<!--<p>{{serverName}}</p>-->
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
@@ -16,5 +16,19 @@
 </button>
 <!--<p [innerText]="allowNewServer"></p>-->
 <p>{{serverCreationStatus}}</p>
+<hr>
 <app-server></app-server>
 <app-server></app-server>
+<hr>
+<label>User Name</label>
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateUserName($event)"
+  [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="isUserNameEmpty()"
+  (click)="onResetUser()">Reset user
+</button>
