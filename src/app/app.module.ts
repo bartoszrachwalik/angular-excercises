@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
-import {ServerComponent} from './server/server.component';
+import {ServerComponent} from './servers/server/server.component';
 import {ServersComponent} from './servers/servers.component';
 import {WarningComponent} from './alerts/warning/warning.component';
 import {SuccessComponent} from './alerts/success/success.component';
