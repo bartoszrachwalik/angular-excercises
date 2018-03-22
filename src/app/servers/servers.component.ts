@@ -10,7 +10,12 @@ import {Component, OnInit} from '@angular/core';
   //   <app-server></app-server>
   //   <app-server></app-server>`,
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  styleUrls: ['./servers.component.css'],
+  styles: [`
+    .fifthElement {
+      color: white;
+    }
+  `]
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
@@ -18,7 +23,10 @@ export class ServersComponent implements OnInit {
   serverCreated = false;
   serverName = 'Testserver';
   userName = '';
-  servers = ['Testserver', 'Testserver2']
+  servers = ['Testserver', 'Testserver2'];
+  isAccessGranted = false;
+  clicksArray = [];
+  clicksCounter = 0;
 
   constructor() {
     setTimeout(() => {
@@ -47,5 +55,10 @@ export class ServersComponent implements OnInit {
 
   isUserNameEmpty() {
     return this.userName === '';
+  }
+
+  toggleSecretPassword() {
+    this.clicksArray.push(++this.clicksCounter);
+    this.isAccessGranted = !this.isAccessGranted;
   }
 }

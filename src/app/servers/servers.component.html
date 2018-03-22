@@ -48,3 +48,18 @@
     (click)="onResetUser()">Reset user
   </button>
 </div>
+<hr>
+
+<!--directives practise-->
+<div>
+  <button
+    class="btn btn-primary"
+    (click)="toggleSecretPassword()">Display Details
+  </button>
+  <p *ngIf="isAccessGranted">Secret Password = Bass</p>
+  <p
+    *ngFor="let element of clicksArray"
+    [ngStyle]="{backgroundColor: element>4 ? 'blue':'transparent'}"
+    [ngClass]="{fifthElement: element>4}">{{element}}
+  </p>
+</div>
