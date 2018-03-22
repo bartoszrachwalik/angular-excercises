@@ -20,6 +20,7 @@
 
   <!--Structural directive example-->
   <p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+  <!--Local reference example. Alternatively you can use nagated if instead of else and ref-->
   <ng-template #noServer>
     <p>No server was created!</p>
   </ng-template>
