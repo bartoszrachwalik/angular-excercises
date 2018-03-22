@@ -28,7 +28,8 @@
 
 <hr>
 <div>
-  <app-server></app-server>
+  <!--creates local variable server which is an element from servers array-->
+  <app-server *ngFor="let server of servers"></app-server>
 </div>
 <hr>
 
