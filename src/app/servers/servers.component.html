@@ -57,9 +57,15 @@
     (click)="toggleSecretPassword()">Display Details
   </button>
   <p *ngIf="isAccessGranted">Secret Password = Bass</p>
+  <!--<p-->
+  <!--*ngFor="let element of clicksArray"-->
+  <!--[ngStyle]="{backgroundColor: element>4 ? 'blue':'transparent'}"-->
+  <!--[ngClass]="{fifthElement: element>4}">{{element}}-->
+  <!--</p>-->
+  <!--alternative with date; index is current iteration value-->
   <p
-    *ngFor="let element of clicksArray"
-    [ngStyle]="{backgroundColor: element>4 ? 'blue':'transparent'}"
-    [ngClass]="{fifthElement: element>4}">{{element}}
+    *ngFor="let element of clicksArray; let i = index"
+    [ngStyle]="{backgroundColor: i>4 ? 'blue':'transparent'}"
+    [ngClass]="{fifthElement: i>4}">{{element}}
   </p>
 </div>

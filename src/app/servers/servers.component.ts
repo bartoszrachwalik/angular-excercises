@@ -58,7 +58,9 @@ export class ServersComponent implements OnInit {
   }
 
   toggleSecretPassword() {
-    this.clicksArray.push(++this.clicksCounter);
+    // this.clicksArray.push(++this.clicksCounter);
+    // alternative with date
+    this.clicksArray.push(new Date());
     this.isAccessGranted = !this.isAccessGranted;
   }
 }
