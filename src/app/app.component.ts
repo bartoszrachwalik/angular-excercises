@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,7 @@ export class AppComponent {
   // undefined intentionally to get an error
   // servers;
   servers = [];
+  serverElements = [{type: 'server', name: 'TestServer', content: 'Just a test!'}];
 
   onAddServer() {
     this.servers.push('Another Server');
