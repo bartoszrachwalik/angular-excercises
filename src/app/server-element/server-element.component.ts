@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ServerElementComponent implements OnInit {
   // allows to use that property by other components
+  // you can use aliases; example: @Input('srvElement')
   @Input() element: {
     type: string,
     name: string,

@@ -9,7 +9,7 @@
       <!--<div class="app-servers"></div>-->
 
       <!--intentional error button-->
-      <button class="btn btn-primary" (click)="onAddServer()">Add Server (error)</button>
+      <button class="btn btn-primary" (click)="onServerAdded()">Add Server (error)</button>
       <ul class="list-group">
         <li class="list-group-item"
             *ngFor="let server of servers; let i =index"
@@ -26,7 +26,9 @@
 </div>
 
 <div class="container">
-  <app-cockpit></app-cockpit>
+  <app-cockpit
+    (serverCreated)="onServerAdded2($event)"
+    (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
