@@ -9,7 +9,8 @@ export class CockpitComponent implements OnInit {
   // we are letting those fields to go outside the component
   @Output() serverCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
   @Output() blueprintCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
-  newServerName = '';
+  // commentet to show local references approach
+  // newServerName = '';
   newServerContent = '';
 
   constructor() {
@@ -19,16 +20,18 @@ export class CockpitComponent implements OnInit {
   }
 
   // we emmit events with a necessary data
-  onAddServer() {
+  onAddServer(nameInput) {
     this.serverCreated.emit({
-      serverName: this.newServerName,
+      // serverName: this.newServerName,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
   }
 
-  onAddBlueprint() {
+  onAddBlueprint(nameInput) {
     this.blueprintCreated.emit({
-      serverName: this.newServerName,
+      // serverName: this.newServerName,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
   }
