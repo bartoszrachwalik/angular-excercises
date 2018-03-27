@@ -34,6 +34,8 @@
     <div class="col-xs-12">
       <!--to check changes-->
       <button class="btn btn-primary" (click)="onChangeFirst()">Change first Element</button>
+      <!--to check destroy-->
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first Element</button>
       <!--Injects app.component 'serverElements' field value to the server-element.component field 'element'-->
       <app-server-element
         *ngFor="let serverElement of serverElements"

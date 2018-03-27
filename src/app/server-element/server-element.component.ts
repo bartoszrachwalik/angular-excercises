@@ -6,7 +6,7 @@ import {
   Component,
   DoCheck,
   Input,
-  OnChanges,
+  OnChanges, OnDestroy,
   OnInit,
   SimpleChanges,
   ViewEncapsulation
@@ -25,7 +25,8 @@ export class ServerElementComponent implements OnInit,
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
-  AfterViewChecked {
+  AfterViewChecked,
+  OnDestroy {
   // allows to use that property by other components
   // you can use aliases; example: @Input('srvElement')
   @Input() element: {
@@ -68,6 +69,9 @@ export class ServerElementComponent implements OnInit,
 
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked called');
+  }
 
+  ngOnDestroy() {
+    console.log('ngOnDestroy called');
   }
 }
