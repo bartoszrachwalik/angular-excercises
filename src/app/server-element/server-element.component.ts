@@ -4,11 +4,15 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
-  DoCheck, ElementRef,
+  ContentChild,
+  DoCheck,
+  ElementRef,
   Input,
-  OnChanges, OnDestroy,
+  OnChanges,
+  OnDestroy,
   OnInit,
-  SimpleChanges, ViewChild,
+  SimpleChanges,
+  ViewChild,
   ViewEncapsulation
 } from '@angular/core';
 
@@ -35,8 +39,12 @@ export class ServerElementComponent implements OnInit,
     content: string;
   };
   // to check changes
-  @Input() name: string
+  @Input() name: string;
+  // in both ViewChild and ContentChild we should use local references names
+  // if it is in the view of this component
   @ViewChild('heading') header: ElementRef;
+  // if it is an other component content
+  @ContentChild('contentParagraph') paragraph: ElementRef;
 
   constructor() {
     console.log('constructor called');
@@ -51,14 +59,17 @@ export class ServerElementComponent implements OnInit,
   ngOnInit() {
     console.log('ngOnInit called');
     console.log('Text content: ' + this.header.nativeElement.textContent);
+    console.log('Text content of paragraph: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngDoCheck() {
     console.log('ngDoCheck called');
   }
 
+  // it gives access to content
   ngAfterContentInit() {
     console.log('ngAfterContentInit called');
+    console.log('Text content of paragraph: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngAfterContentChecked() {
