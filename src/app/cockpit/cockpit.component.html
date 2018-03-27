@@ -9,7 +9,12 @@
       class="form-control"
       #serverNameInput>
     <label>Server Content</label>
-    <input type="text" class="form-control" [(ngModel)]="newServerContent">
+    <!--<input type="text" class="form-control" [(ngModel)]="newServerContent">-->
+    <!--local reference that will be passed thanks to @ViewChild-->
+    <input
+      type="text"
+      class="form-control"
+      #serverContentInput>
     <br>
     <!--inputing local reference in onAddServer method-->
     <button

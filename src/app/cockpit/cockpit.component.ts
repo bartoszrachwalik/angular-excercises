@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
@@ -11,7 +11,9 @@ export class CockpitComponent implements OnInit {
   @Output() blueprintCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
   // commentet to show local references approach
   // newServerName = '';
-  newServerContent = '';
+  // newServerContent = '';
+  // param is name of a local reference
+  @ViewChild('serverContentInput') serverContentInput: ElementRef;
 
   constructor() {
   }
@@ -20,19 +22,22 @@ export class CockpitComponent implements OnInit {
   }
 
   // we emmit events with a necessary data
-  onAddServer(nameInput) {
+  onAddServer(nameInput: HTMLInputElement) {
     this.serverCreated.emit({
       // serverName: this.newServerName,
       serverName: nameInput.value,
-      serverContent: this.newServerContent
+      // serverContent: this.newServerContent
+      // access via local ref fetched by @ViewChild
+      serverContent: this.serverContentInput.nativeElement.value
     });
   }
 
-  onAddBlueprint(nameInput) {
+  onAddBlueprint(nameInput: HTMLInputElement) {
     this.blueprintCreated.emit({
       // serverName: this.newServerName,
       serverName: nameInput.value,
-      serverContent: this.newServerContent
+      // serverContent: this.newServerContent
+      serverContent: this.serverContentInput.nativeElement.value
     });
   }
 }
