@@ -43,4 +43,7 @@ export class AppComponent {
     this.servers.splice(position, 1);
   }
 
+  onChangeFirst() {
+    this.serverElements[0].name = 'Changed!';
+  }
 }
