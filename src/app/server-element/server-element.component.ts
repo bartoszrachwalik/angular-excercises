@@ -4,11 +4,11 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
-  DoCheck,
+  DoCheck, ElementRef,
   Input,
   OnChanges, OnDestroy,
   OnInit,
-  SimpleChanges,
+  SimpleChanges, ViewChild,
   ViewEncapsulation
 } from '@angular/core';
 
@@ -36,6 +36,7 @@ export class ServerElementComponent implements OnInit,
   };
   // to check changes
   @Input() name: string
+  @ViewChild('heading') header: ElementRef;
 
   constructor() {
     console.log('constructor called');
@@ -46,8 +47,10 @@ export class ServerElementComponent implements OnInit,
     console.log(changes);
   }
 
+  // won't log header, too early in the lifecycle
   ngOnInit() {
     console.log('ngOnInit called');
+    console.log('Text content: ' + this.header.nativeElement.textContent);
   }
 
   ngDoCheck() {
@@ -63,8 +66,10 @@ export class ServerElementComponent implements OnInit,
 
   }
 
+  // afterViewInit gives access to template elements, before you reach it you can't see values
   ngAfterViewInit() {
     console.log('ngAfterViewInit called');
+    console.log('Text content: ' + this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked() {

@@ -12,7 +12,7 @@ export class CockpitComponent implements OnInit {
   // commentet to show local references approach
   // newServerName = '';
   // newServerContent = '';
-  // param is name of a local reference
+  // param is name of a local reference; it gets access from template
   @ViewChild('serverContentInput') serverContentInput: ElementRef;
 
   constructor() {
