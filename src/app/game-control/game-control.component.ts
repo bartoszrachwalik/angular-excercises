@@ -1,4 +1,4 @@
-import {Component, EventEmitter, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-game-control',
@@ -21,5 +21,10 @@ export class GameControlComponent implements OnInit {
       this.intervalEmitted.emit(this.lastNumber + 1);
       this.lastNumber++;
     }, 1000);
+  }
+
+  onStopGame() {
+    clearInterval(this.interval);
+    this.lastNumber = 0;
   }
 }
