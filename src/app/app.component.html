@@ -42,7 +42,7 @@
         [element]="serverElement"
         [name]="serverElement.name">
         <!--the way how to inject html code to other component; copied from server-element-->
-       <!--#contentParagraph is not part of view of server-element, it's part of the content-->
+        <!--#contentParagraph is not part of view of server-element, it's part of the content-->
         <p #contentParagraph>
           <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
           <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
@@ -50,4 +50,5 @@
       </app-server-element>
     </div>
   </div>
+  <app-game-control (intervalEmitted)="onIntervalEmitted($event)"></app-game-control>
 </div>

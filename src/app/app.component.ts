@@ -50,4 +50,8 @@ export class AppComponent {
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
   }
+
+  onIntervalEmitted(emittedNumber: number) {
+    console.log(emittedNumber);
+  }
 }
