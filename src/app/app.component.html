@@ -67,14 +67,19 @@
         <div *ngIf="onlyOdd">
           <li
             class="list-group-item"
-            *ngFor="let odd of oddNumbersArray">
-            {{odd}}
+            [ngClass]="{oddStyle: oddNumber % 2 !== 0}"
+            [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'transparent'}"
+            *ngFor="let oddNumber of oddNumbersArray">
+            {{oddNumber}}
           </li>
         </div>
         <div *ngIf="!onlyOdd">
-          <li class="list-group-item"
-              *ngFor="let even of evenNumbersArray">
-            {{even}}
+          <li
+            class="list-group-item"
+            [ngClass]="{oddStyle: evenNumber % 2 !== 0}"
+            [ngStyle]="{backgroundColor: evenNumber % 2 !== 0 ? 'yellow' : 'transparent'}"
+            *ngFor="let evenNumber of evenNumbersArray">
+            {{evenNumber}}
           </li>
         </div>
       </ul>

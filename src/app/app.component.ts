@@ -10,7 +10,7 @@ import {Component, OnInit} from '@angular/core';
     }
   `]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   oddNumbersArray = [1, 3, 5];
   evenNumbersArray = [2, 4];
   onlyOdd = false;
@@ -20,6 +20,12 @@ export class AppComponent {
   serverElements = [{type: 'server', name: 'TestServer', content: 'Just a test!'}];
   oddNumbers: number[] = [];
   evenNumbers: number[] = [];
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
 
   onServerAdded2(serverData: { serverName: string, serverContent: string }) {
     this.serverElements.push({
