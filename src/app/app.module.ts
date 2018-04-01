@@ -13,6 +13,7 @@ import {GameControlComponent} from './game-control/game-control.component';
 import {OddComponent} from './game-control/odd/odd.component';
 import {EvenComponent} from './game-control/even/even.component';
 import {BasicHighlightDirective} from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {BasicHighlightDirective} from './basic-highlight/basic-highlight.directi
     OddComponent,
     EvenComponent,
     GameControlComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
