@@ -11,6 +11,9 @@ import {Component, OnInit} from '@angular/core';
   `]
 })
 export class AppComponent {
+  oddNumbersArray = [1, 3, 5];
+  evenNumbersArray = [2, 4];
+  onlyOdd = false;
   // undefined intentionally to get an error
   // servers;
   servers = [];
