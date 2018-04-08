@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
   serverElements = [{type: 'server', name: 'TestServer', content: 'Just a test!'}];
   oddNumbers: number[] = [];
   evenNumbers: number[] = [];
+  // ngSwitch value
+  value = 10;
 
   constructor() {
   }
