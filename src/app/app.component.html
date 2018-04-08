@@ -84,7 +84,9 @@
         </div>
       </ul>
       <p appBasicHighlight>Style me with basic directive</p>
-      <p appBetterHighlight>Style me with basic directive</p>
+      <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with basic directive</p>
+      <!--and use it as [appBetterHighlight]="'red'"-->
+      <!--alternatively highlight="red" also works-->
     </div>
   </div>
 </div>
