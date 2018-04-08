@@ -73,7 +73,28 @@
             {{oddNumber}}
           </li>
         </div>
-        <div *ngIf="!onlyOdd">
+        <!--<div *ngIf="!onlyOdd">-->
+        <!--<li-->
+        <!--class="list-group-item"-->
+        <!--[ngClass]="{oddStyle: evenNumber % 2 !== 0}"-->
+        <!--[ngStyle]="{backgroundColor: evenNumber % 2 !== 0 ? 'yellow' : 'transparent'}"-->
+        <!--*ngFor="let evenNumber of evenNumbersArray">-->
+        <!--{{evenNumber}}-->
+        <!--</li>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;that what * actually does in ngIf&ndash;&gt;-->
+        <!--<ng-template [ngIf]="!onlyOdd">-->
+        <!--<div>-->
+        <!--<li-->
+        <!--class="list-group-item"-->
+        <!--[ngClass]="{oddStyle: evenNumber % 2 !== 0}"-->
+        <!--[ngStyle]="{backgroundColor: evenNumber % 2 !== 0 ? 'yellow' : 'transparent'}"-->
+        <!--*ngFor="let evenNumber of evenNumbersArray">-->
+        <!--{{evenNumber}}-->
+        <!--</li>-->
+        <!--</div>-->
+        <!--</ng-template>-->
+        <div *appUnless="onlyOdd">
           <li
             class="list-group-item"
             [ngClass]="{oddStyle: evenNumber % 2 !== 0}"
@@ -82,18 +103,6 @@
             {{evenNumber}}
           </li>
         </div>
-        <!--that what * actually does in ngIf-->
-        <ng-template [ngIf]="!onlyOdd">
-          <div>
-            <li
-              class="list-group-item"
-              [ngClass]="{oddStyle: evenNumber % 2 !== 0}"
-              [ngStyle]="{backgroundColor: evenNumber % 2 !== 0 ? 'yellow' : 'transparent'}"
-              *ngFor="let evenNumber of evenNumbersArray">
-              {{evenNumber}}
-            </li>
-          </div>
-        </ng-template>
       </ul>
       <p appBasicHighlight>Style me with basic directive</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with basic directive</p>
